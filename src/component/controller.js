@@ -1,4 +1,4 @@
-export default class CollectionPaginationController {
+export default class CollectionPaginationController {  
   $onChanges() {
     this.perPage = parseInt(this.perPage) || 5;
     this.shownIndexesCount = parseInt(this.navigationLength) || 5;
@@ -40,5 +40,8 @@ export default class CollectionPaginationController {
   update() {
     let offset = this.selectedIndex * this.perPage;
     this.paginatedCollection = this.collection.slice(offset, offset + this.perPage);
+    if( this.onPageChange ){
+      this.onPageChange({page: (this.selectedIndex + 1) });
+    }
   }
 }

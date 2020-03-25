@@ -9,6 +9,7 @@ export default {
     collection: '<',
     paginatedCollection: '=',
     perPage: '<',
-    navigationLength: '<'
+    navigationLength: '<',
+    onPageChange: '&'
   }
 };
